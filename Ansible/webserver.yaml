@@ -10,7 +10,7 @@
        auto_attach: true
    - name: Disable all repositories except rhel-7-server-rpms
      rhsm_repository:
-       name: rhel-7-server-rpms
+       name: rhel-8-server-rpms
        purge: True
    - name: install httpd 
      yum:
