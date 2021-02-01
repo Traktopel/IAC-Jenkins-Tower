@@ -1,0 +1,24 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Build Infrastructure') {
+         steps {
+            sleep 10
+            echo 'Infrastructure Provisioned'
+         }
+      }
+    stage('Provision Machine') {
+         steps {
+            sleep 10
+            echo 'VM provisioned'
+         }
+      }
+    stage('Configure Web Server') {
+         steps {
+            sleep 10
+            echo 'Web Server configured'
+         }
+      }
+   }
+}
