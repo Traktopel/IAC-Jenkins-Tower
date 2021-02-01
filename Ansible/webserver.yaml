@@ -3,13 +3,13 @@
   remote_user: root
   tasks:
    - name: registration to RHSM
-     community.general.redhat_subscription:
+     redhat_subscription:
        state: present
        username: mbernacc1@redhat.com
        password: changeme
        auto_attach: true
    - name: Disable all repositories except rhel-7-server-rpms
-     community.general.rhsm_repository:
+     rhsm_repository:
        name: rhel-7-server-rpms
        purge: True
    - name: install httpd 
