@@ -2,22 +2,31 @@ pipeline {
    agent any
 
    stages {
-      stage('Build Infrastructure') {
+      stage('Image Build') {
          steps {
-            sleep 10
             echo 'Infrastructure Provisioned'
+            sleep 10
          }
       }
-    stage('Provision Machine') {
+    stage('Infrastructure Provisioning') {
          steps {
-            sleep 10
             echo 'VM provisioned'
+            sleep 10
          }
       }
     stage('Configure Web Server') {
          steps {
-            sleep 10
-            echo 'Web Server configured'
+         ansibleTower(
+             credential: 'root', 
+             inventory: 'IaC', 
+             jobTemplate: 'Configure Webserver', 
+             jobType: 'run', 
+             throwExceptionWhenFail: false, 
+             towerCredentialsId: 'toweradmin', 
+             towerLogLevel: 'full',
+             importTowerLogs: true,
+             towerServer: 'tower'         
+            )
          }
       }
    }
