@@ -21,7 +21,7 @@ pipeline {
              inventory: 'IaC', 
              jobTemplate: 'Configure Webserver', 
              jobType: 'run', 
-             throwExceptionWhenFail: false, 
+             throwExceptionWhenFail: true, 
              towerCredentialsId: 'toweradmin', 
              towerLogLevel: 'full',
              importTowerLogs: true,
