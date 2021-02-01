@@ -5,9 +5,9 @@
    - name: registration to RHSM
      redhat_subscription:
        state: present
-       username: '{{ rhsm_username }}'
-       password: '{{ rhsm_password }}'
-       pool_ids: '{{ rhsm_poolid }}' 
+       username: {{ rhsm_username }}
+       password: {{ rhsm_password }}
+       pool_ids: {{ rhsm_poolid }} 
    - name: Disable all repositories except rhel-8-server-rpms
      rhsm_repository:
        name: rhel-8-server-rpms
