@@ -25,6 +25,7 @@ pipeline {
              towerCredentialsId: 'toweradmin', 
              towerLogLevel: 'full',
              importTowerLogs: true,
+             removeColor: false,
              towerServer: 'tower'         
             )
          }
