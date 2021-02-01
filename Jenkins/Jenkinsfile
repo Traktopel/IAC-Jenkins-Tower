@@ -27,11 +27,10 @@ pipeline {
              importTowerLogs: true,
              removeColor: false,
              towerServer: 'tower',         
-             extraVars: {
-                rhsm_username: "mbernacc1@redhat.com",
-                rhsm_password: "chanegme",
-                rhsm_poolid: "8a85f98260c27fc50160c32cc5fe5ceb"
-             }
+             extraVars: '''---
+rhsm_username: "mbernacc1@redhat.com",
+rhsm_password: "chanegme",
+rhsm_poolid: "8a85f98260c27fc50160c32cc5fe5ceb"'''
          )
          }
       }
