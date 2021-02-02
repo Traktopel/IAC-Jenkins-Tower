@@ -4,7 +4,7 @@
   tasks:
    - name: Disable all repositories except rhel-8-for-x86_64-baseos-rpms
      rhsm_repository:
-       name: {{ item }}
+       name: "{{ item }}"
        with_items:
        - rhel-8-for-x86_64-baseos-rpms
        - rhel-8-for-x86_64-appstream-rpms
@@ -21,6 +21,6 @@
    - name: motd
      net_banner:
        banner: login
-       text: {{ instance_motd }}
+       text: "{{ instance_motd }}"
        state: present
 
