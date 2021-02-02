@@ -2,13 +2,6 @@
 - hosts: webservers
   remote_user: root
   tasks:
-   - name: Disable all repositories except rhel-8-for-x86_64-baseos-rpms
-     rhsm_repository:
-       name: "{{ item }}"
-       purge: True
-     with_items:
-       - rhel-8-for-x86_64-baseos-rpms
-       - rhel-8-for-x86_64-appstream-rpms
    - name: install httpd 
      yum:
        name: httpd
