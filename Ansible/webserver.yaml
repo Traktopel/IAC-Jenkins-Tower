@@ -4,7 +4,8 @@
   tasks:
    - name: Disable all repositories except rhel-8-for-x86_64-baseos-rpms
      rhsm_repository:
-       name:
+       name: {{ item }}
+       with_items:
        - rhel-8-for-x86_64-baseos-rpms
        - rhel-8-for-x86_64-appstream-rpms
        purge: True
