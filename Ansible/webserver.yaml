@@ -4,7 +4,9 @@
   tasks:
    - name: Disable all repositories except rhel-8-for-x86_64-baseos-rpms
      rhsm_repository:
-       name: rhel-8-for-x86_64-baseos-rpms, rhel-8-for-x86_64-appstream-rpms
+       name:
+       - rhel-8-for-x86_64-baseos-rpms
+       - rhel-8-for-x86_64-appstream-rpms
        purge: True
    - name: install httpd 
      yum:
