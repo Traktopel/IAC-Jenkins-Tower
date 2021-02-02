@@ -28,9 +28,7 @@ pipeline {
              removeColor: false,
              towerServer: 'tower',         
              extraVars: '''---
-             rhsm_username: "mbernacc1@redhat.com"
-             rhsm_password: "changeme"
-             rhsm_poolid: "8a85f98260c27fc50160c32cc5fe5ceb"'''
+             instance_hostname: "webserver.rhel8.traknet.org"
          )
          }
       }

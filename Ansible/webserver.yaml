@@ -2,15 +2,9 @@
 - hosts: webservers
   remote_user: root
   tasks:
-   - name: registration to RHSM
-     redhat_subscription:
-       state: present
-       username: "{{ rhsm_username }}"
-       password: "{{ rhsm_password }}"
-       pool_ids: "{{ rhsm_poolid }} "
-   - name: Disable all repositories except rhel-8-server-rpms
+   - name: Disable all repositories except rhel-8-for-x86_64-baseos-rpms
      rhsm_repository:
-       name: rhel-8-server-rpms
+       name: rhel-8-for-x86_64-baseos-rpms
        purge: True
    - name: install httpd 
      yum:
