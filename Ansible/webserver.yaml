@@ -7,8 +7,8 @@
        name: "{{ item }}"
        purge: True
        with_items:
-       - rhel-8-for-x86_64-baseos-rpms
-       - rhel-8-for-x86_64-appstream-rpms
+         - rhel-8-for-x86_64-baseos-rpms
+         - rhel-8-for-x86_64-appstream-rpms
    - name: install httpd 
      yum:
        name: httpd
