@@ -15,11 +15,12 @@
        name: httpd
        enabled: yes
        state: started
-   - net_banner:
-     banner: login
-     text: |
-       this is my login banner
-       that contains a multiline
-       string
-     state: present
+   - name: motd
+     net_banner:
+       banner: login
+       text: |
+         this is my login banner
+         that contains a multiline
+         string
+       state: present
 
