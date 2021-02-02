@@ -6,10 +6,9 @@
     yum:
       name: '*'
       state: latest
-  - name: banner updated
-     net_banner:
-       banner: login
-       text: |
-        system updated
-       state: present
+  - name: motd
+    copy:
+      content: "Update"
+      dest: /etc/motd
+
 

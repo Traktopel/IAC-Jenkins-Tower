@@ -28,7 +28,7 @@ pipeline {
              removeColor: false,
              towerServer: 'tower',         
              extraVars: '''---
-             instance_motd: "All your base are belong to us!!"'''
+             instance_motd: "All your base are belong to us!!\n"'''
          )
          }
       }
