@@ -28,7 +28,7 @@ pipeline {
              removeColor: false,
              towerServer: 'tower',         
              extraVars: '''---
-             instance_hostname: "webserver.rhel8.traknet.org"'''
+             instance_motd: "All your base are belong to us!!"'''
          )
          }
       }

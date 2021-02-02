@@ -18,9 +18,6 @@
    - name: motd
      net_banner:
        banner: login
-       text: |
-         this is my login banner
-         that contains a multiline
-         string
+       text: {{ instance_motd }}
        state: present
 

@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  remote_user: root
+  tasks:
+  - name: Upgrade all packages
+    yum:
+      name: '*'
+      state: latest
+  - name: banner updated
+     net_banner:
+       banner: login
+       text: |
+        system updated
+       state: present
+
