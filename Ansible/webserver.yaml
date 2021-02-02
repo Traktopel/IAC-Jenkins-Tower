@@ -12,8 +12,7 @@
        enabled: yes
        state: started
    - name: motd
-     net_banner:
-       banner: login
-       text: "{{ instance_motd }}"
-       state: present
+     copy:
+       content: "{{ instance_motd }}"
+       dest: /etc/motd
 
