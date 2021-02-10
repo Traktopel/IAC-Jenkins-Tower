@@ -11,7 +11,7 @@
        name: httpd
        enabled: yes
        state: started
-   - name: msg
+   - name: write index
      copy:
        content: "{{ msg }}"
        dest: /var/www/html/index.html
