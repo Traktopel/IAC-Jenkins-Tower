@@ -29,7 +29,7 @@ pipeline {
              removeColor: false,
              towerServer: 'tower',         
              extraVars: '''---
-             msg: "Configured trough a Job Template!!\n"'''
+             msg: "Configured with Jenkins and a Job workflow!!\n"'''
          )
          }
       }
