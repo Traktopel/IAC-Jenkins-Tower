@@ -2,17 +2,17 @@
 - hosts: webservers
   remote_user: root
   tasks:
-   - name: install httpd 
-     yum:
+  - name: install httpd 
+    yum:
        name: httpd
        state: present
-   - name: enable service httpd
-     service:
+  - name: enable service httpd
+    service:
        name: httpd
        enabled: yes
        state: started
-   - name: write index
-     copy:
+  - name: write index
+    copy:
        content: "{{ msg }}"
        dest: /var/www/html/index.html
 
