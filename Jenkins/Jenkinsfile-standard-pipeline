@@ -1,0 +1,36 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Image Build') {
+         steps {
+            echo 'Infrastructure Provisioned'
+            sleep 10
+         }
+      }
+    stage('Infrastructure Provisioning') {
+         steps {
+            echo 'VM provisioned'
+            sleep 10
+         }
+      }
+    stage('Configure Web Server') {
+         steps {
+         ansibleTower(
+             credential: 'root', 
+             inventory: 'IaC', 
+             jobTemplate: 'Configure Webserver', 
+             jobType: 'run', 
+             throwExceptionWhenFail: true, 
+             towerCredentialsId: 'toweradmin', 
+             towerLogLevel: 'full',
+             importTowerLogs: true,
+             removeColor: false,
+             towerServer: 'tower',         
+             extraVars: '''---
+             msg: "Configured trough a Job Template!!\n"'''
+         )
+         }
+      }
+   }
+}
