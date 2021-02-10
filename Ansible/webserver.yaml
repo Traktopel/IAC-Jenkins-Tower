@@ -13,6 +13,6 @@
        state: started
    - name: motd
      copy:
-       content: "{{ instance_motd }}"
-       dest: /etc/motd
+       content: "{{ msg }}"
+       dest: /var/www/html/index.html
 
