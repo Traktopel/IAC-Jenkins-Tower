@@ -14,45 +14,14 @@ pipeline {
             sleep 10
          }
       }
-    stage('Hardening') {
+    stage('Deliver through Ansible Workflow') {
          steps {
          ansibleTower(
              credential: 'root via Hashicorp Vault', 
              inventory: 'IaC Inventory', 
-             jobTemplate: 'Hardening System', 
+             jobTemplate: 'IAC Workflow - Webserver', 
              jobType: 'run', 
-             throwExceptionWhenFail: true, 
-             towerCredentialsId: 'toweradmin', 
-             towerLogLevel: 'full',
-             importTowerLogs: true,
-             removeColor: false,
-             towerServer: 'tower'         
-         )
-         }
-      }
-    stage('Compliance') {
-         steps {
-         ansibleTower(
-             credential: 'root via Hashicorp Vault', 
-             inventory: 'IaC Inventory', 
-             jobTemplate: 'Configure Compliance', 
-             jobType: 'run', 
-             throwExceptionWhenFail: true, 
-             towerCredentialsId: 'toweradmin', 
-             towerLogLevel: 'full',
-             importTowerLogs: true,
-             removeColor: false,
-             towerServer: 'tower'         
-         )
-         }
-      }
-    stage('Configure Web Server') {
-         steps {
-         ansibleTower(
-             credential: 'root via Hashicorp Vault', 
-             inventory: 'IaC Inventory', 
-             jobTemplate: 'Configure WebServer', 
-             jobType: 'run', 
+             templateType: 'workflow',
              throwExceptionWhenFail: true, 
              towerCredentialsId: 'toweradmin', 
              towerLogLevel: 'full',
