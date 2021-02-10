@@ -19,7 +19,7 @@ pipeline {
          ansibleTower(
              credential: 'root via Hashicorp Vault', 
              inventory: 'IaC Inventory', 
-             jobTemplate: 'Hardening System', 
+             jobTemplate: 'Hardening Systems',
              jobType: 'run', 
              throwExceptionWhenFail: true, 
              towerCredentialsId: 'toweradmin', 
